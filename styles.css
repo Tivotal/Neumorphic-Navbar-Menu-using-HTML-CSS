@@ -1,0 +1,132 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background: #ecf0f3;
+}
+
+nav {
+  width: 100%;
+  padding: 12px 0;
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #fff, 3px 3px 7px #ceced1, inset -3px -3px 7px #fff,
+    inset 3px 3px 7px #ceced1;
+}
+
+nav .menu {
+  max-width: 1270px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+}
+
+ul {
+  display: flex;
+}
+
+ul a {
+  margin: 0 8px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  display: inline-flex;
+  padding: 10px 12px;
+  box-shadow: -3px -3px 7px #fff, 3px 3px 7px #ceced1;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+ul a:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 7px #ceced1;
+}
+
+ul a:hover {
+  color: #3498db;
+}
+
+input {
+  display: none;
+}
+
+label.btn {
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+
+label.close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+}
+
+@media (max-width: 940px) {
+  ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    padding-top: 45px;
+    background: #ecf0f3;
+    z-index: 12;
+    box-shadow: 0 5px 10px #b0b0b5;
+    transition: all 0.3s ease;
+  }
+
+  ul a {
+    display: block;
+    width: 100%;
+    font-size: 23px;
+    margin-top: 30px;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  ul a:hover::before {
+    box-shadow: none;
+  }
+
+  label.open {
+    display: block;
+  }
+
+  input:checked ~ ul {
+    left: 0;
+  }
+
+  input:checked ~ label.open {
+    display: none;
+  }
+
+  input:checked ~ ul label.close {
+    display: block;
+  }
+}
